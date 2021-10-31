@@ -1,0 +1,143 @@
+@import "../../../theme/variable";
+//body.ct-editor-dragging{
+//    &:before, &:after{
+//        content :"";
+//        position: fixed;
+//        left: 0;
+//        right: 0;
+//        height: 80px;
+//        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,166,118,1) 50%);
+//        opacity: .45;
+//        z-index: 1000;
+//
+//    }
+//    &:before{
+//        top: 0;
+//
+//    }
+//    &:after{
+//        bottom: 0;
+//        transform: rotate(180deg);
+//    }
+//}
+
+#ct-side-bar-elements{
+    .group-element{
+        overflow: hidden;
+    }
+
+    .ct-element-btn-draggable {
+        cursor: all-scroll !important;
+    }
+
+    .ct-element-btn-not-draggable {
+        cursor: default !important;
+    }
+}
+
+@mixin _displaySelectionHandle(){
+    &> .ck-widget__selection-handle{
+        display: block;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+    }
+}
+
+.root-marker-element{
+    &[data-dragging-model-name]{
+        .ck-widget__selection-handle{
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+
+    [data-block-type=element] ~ [data-block-type=element]{
+        margin-left: 3px;
+    }
+
+
+    &[data-dragging-model-name=block]{
+        [data-block-type=section],
+        [data-block-type=container],
+        [data-block-type=row],
+        [data-block-type=column],
+        [data-block-type=block],
+        [data-block-type=block-widget]
+        {
+            outline-color: var(--ck-color-focus-border) !important;
+            @include _displaySelectionHandle()
+
+        }
+    }
+
+
+    &[data-dragging-model-name=content]{
+        [data-block-type=column],
+        [data-block-type=block]
+        {
+            outline-color: var(--ck-color-focus-border) !important;
+            @include _displaySelectionHandle()
+
+        }
+    }
+
+
+    &[data-dragging-model-name=column]{
+        [data-block-type=row],
+        [data-block-type=column],
+        [data-block-type=block]
+        {
+            outline-color: var(--ck-color-focus-border) !important;
+            @include _displaySelectionHandle()
+
+        }
+    }
+
+    &[data-dragging-model-name=row]{
+        [data-block-type=container],
+        [data-block-type=row],
+        [data-block-type=column],
+        [data-block-type=block]
+        {
+            outline-color: var(--ck-color-focus-border) !important;
+            @include _displaySelectionHandle()
+
+        }
+    }
+
+    &[data-dragging-model-name=container]{
+        [data-block-type=section],
+        [data-block-type=container],
+        [data-block-type=block]
+        {
+            outline-color: var(--ck-color-focus-border) !important;
+            @include _displaySelectionHandle()
+
+        }
+    }
+
+
+    &[data-dragging-model-name=section]{
+        [data-block-type=section],
+        [data-block-type=block]
+        {
+            outline-color: var(--ck-color-focus-border) !important;
+            @include _displaySelectionHandle()
+
+        }
+    }
+    &[data-dragging-model-name=shape-divider]{
+        [data-block-type=section],
+        [data-block-type=block],
+        [data-block-type=shape-divider]
+        {
+            outline-color: var(--ck-color-focus-border) !important;
+            @include _displaySelectionHandle()
+
+        }
+    }
+
+}

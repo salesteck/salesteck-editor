@@ -1,0 +1,58 @@
+.ck-editor-lightbox {
+  z-index: 10001;
+  position: fixed;
+}
+.ck-editor-lightbox .mfp-iframe-holder .mfp-content {
+  max-width: unset;
+  width: 100%;
+  height: 100%;
+}
+.ck-editor-lightbox .mfp-iframe-holder .mfp-content .mfp-iframe-scaler {
+  padding-top: unset;
+}
+
+.ck-editor-iframe {
+  z-index: 10001;
+  padding-top: unset;
+}
+.ck-editor-iframe .mfp-close, .ck-editor-iframe .mfp-close:active {
+  top: -40px;
+  right: 0;
+}
+.ck-editor-iframe .ck-preview-iframe {
+  margin: auto;
+  right: 0;
+  left: 0;
+  background-color: white;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.ck-editor-iframe .ck-preview-iframe::-webkit-scrollbar {
+  width: 4px;
+}
+.ck-editor-iframe .ck-preview-iframe::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+.ck-editor-iframe .ck-preview-iframe::-webkit-scrollbar-thumb {
+  background: var(--bs-theme);
+  border-radius: 10px;
+}
+.ck-editor-iframe .ck-preview-iframe::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-theme);
+}
+.ck-editor-iframe .ck-preview-iframe.phone {
+  max-width: 574px;
+}
+.ck-editor-iframe .ck-preview-iframe.tablet {
+  max-width: 767px;
+}
+.ck-editor-iframe .ck-preview-iframe.laptop {
+  max-width: 991px;
+}
+.ck-editor-iframe .ck-preview-iframe.desktop {
+  max-width: 1199px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+@import "../../../theme/variable";
+@import "../../../theme/mixin";
+[data-widget-type=progress-bar] {
+    background-image:
+        linear-gradient(
+            45deg,
+            hsla(var(--ct-widget-color-hsl), .15) 25%,
+            transparent 25%,
+            transparent 50%,
+            hsla(var(--ct-widget-color-hsl), .15) 50%,
+            hsla(var(--ct-widget-color-hsl), .15) 75%,
+            transparent 75%, transparent
+        ) !important;
+    background-size: 1rem 1rem !important;
+
+    animation: 1s linear infinite progress-bar-stripes;
+
+
+    &> .ck-widget__type-around:before {
+        content: unset;
+        background: var(--ck-color-focus-border) !important;
+    }
+}
+

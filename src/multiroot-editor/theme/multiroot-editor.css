@@ -1,0 +1,69 @@
+:root {
+  --ct-primary-color: #00A676;
+  --ct-secondaray-color: #00A676;
+  --ct-widget-color-hsl: 0, 100%, 62%;
+  --ct-text-color-hsl: 216, 100%, 88%;
+  --ct-text-gradient-color-hsl: hsl(var(--ct-text-color-hsl));
+  --ct-toolbar-height: 40px;
+  --ct-elements-sidebar-width: 100px;
+  --ck-widget-outline-thickness: 2px;
+  --ck-widget-handler-icon-size: 12px;
+  --ck-color-button-default-disabled-background: #f2f2f2;
+  --ck-color-input-disabled-background: #f2f2f2;
+  --ck-color-widget-blurred-border: hsl(0, 0%, 87%);
+  --ck-color-widget-hover-border: hsl(0, 100%, 62%);
+  --ck-color-focus-border-coordinates: 0, 100%, 62%;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates));
+  --ct-widget-size: 16px;
+  --ct-tree-spacing: 28px;
+  --ct-tree-index: 1;
+  --ck-focus-ring: 0;
+  --ck-z-modal: 2000;
+}
+
+#ct-toolbar {
+  position: fixed !important;
+  top: 0;
+  width: 100% !important;
+  z-index: 7999;
+}
+#ct-toolbar .ck-toolbar__items {
+  justify-content: center;
+}
+
+.ck-toolbar__items button:hover:not(.ck-disabled),
+.ck-toolbar__items button:hover:not(.ck-off) {
+  color: var(--ct-primary-color);
+}
+
+.ck.ck-editor__editable_inline {
+  caret-color: var(--ct-primary-color) !important;
+}
+.ck.ck-editor__editable_inline > :first-child {
+  margin-top: unset !important;
+}
+.ck.ck-editor__editable_inline > :last-child {
+  margin-bottom: unset;
+}
+
+.ck.ck-labeled-field-view > .ck.ck-labeled-field-view__input-wrapper > .ck-dropdown > .ck.ck-button.ck-disabled {
+  background-color: var(--ck-color-input-disabled-background);
+}
+
+body.ct-editing {
+  scroll-behavior: smooth !important;
+  transition: margin-right 0.3s ease-in-out;
+  margin-top: var(--ct-toolbar-height);
+}
+body.ct-editing.ct-elements-active {
+  margin-right: var(--ct-elements-sidebar-width);
+}
+body.ct-editing .ck-content {
+  overflow: hidden;
+}
+
+.ck-widget:not(.page-break) > .ck.ck-widget__type-around {
+  width: 100% !important;
+}
+
+/*# sourceMappingURL=multiroot-editor.css.map */

@@ -1,0 +1,21 @@
+.ck.ck-button.ck-switchbutton {
+  .ck-button__toggle{
+    border-radius: 5em !important;
+    &>.ck-button__toggle__inner{
+
+      border-radius: 50% !important;
+    }
+  }
+  &.ck-on{
+    .ck-button__toggle{
+      background: var(--ct-primary-color);
+    }
+  }
+}
+.ct-hover-state-element{
+  &>:first-child{
+
+    margin-right: 10px;
+  }
+}
+

@@ -1,0 +1,114 @@
+
+
+#ct-tree-offcanvas {
+    .offcanvas-body{
+        padding: 1rem 0.5rem;
+    }
+
+    .accordion-body {
+        padding: 0;
+    }
+
+    .accordion-collapse {
+        padding: 0;
+    }
+    .list-group{
+
+        transition: all .2s ease-in-out;
+        overflow: hidden;
+        &.list-group-root {
+            padding: 0;
+            overflow: hidden;
+            margin-top: -1px;
+
+            .list-group {
+                margin-bottom: 0;
+            }
+
+            .list-group-item {
+                border-radius: 0;
+                border-width: 1px 0 0 0;
+            }
+        }
+
+        &.nested {
+            max-height: 0;
+        }
+        &.active{
+            max-height: 10000px;
+        }
+    }
+
+    .list-group-root {
+        border-radius: 0;
+        & > li:first-of-type > div.list-group-item.display:first-of-type{
+            border-top: 0;
+        }
+    }
+
+    .list-group-item {
+
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        line-height: 20px;
+        font-size: 12px;
+
+        padding: 0.5rem 4px 0.5rem 0.5rem;
+        &>span[data-ct-block-name]:not([data-ct-block-name='']):after{
+            content: ' : ' attr(data-ct-block-name);
+        }
+
+        .toggle>i {
+            margin-right: 4px;
+            margin-left: -4px;
+        }
+
+        & > .list-group-btn{
+
+            transition: all .2s ease-in-out;
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            cursor: pointer;
+            line-height: inherit;
+            font-size: 16px;
+            border: 0;
+            color: inherit;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            &:hover{
+                color: var(--ct-primary-color);
+            }
+            &.remove{
+                color: var(--bs-danger);
+                &:hover{
+
+                    color: var(--bs-danger-hover);
+                }
+            }
+            &>i{
+                transition: inherit;
+            }
+        }
+
+        &.expanded {
+
+            & > .list-group-btn.toggle {
+                color: var(--ct-primary-color);
+                &>i{
+                    -ms-transform: rotate(90deg); /* IE 9 */
+                    -webkit-transform: rotate(90deg); /* Safari */
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        &.selected{
+
+            color: var(--ct-primary-color);
+        }
+    }
+}

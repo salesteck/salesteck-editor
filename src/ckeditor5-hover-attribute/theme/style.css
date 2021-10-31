@@ -1,0 +1,27 @@
+body.ct-editing .ck-content .ct-hover-state-element-view {
+  z-index: 1;
+  font-size: 10px;
+  display: none;
+  position: absolute;
+  top: min(var(--ck-spacing-medium), 6%);
+  right: min(var(--ck-spacing-medium), 6%);
+  color: rgba(0, 0, 0, 0.2);
+  background-color: var(--ck-color-widget-blurred-border);
+  border-radius: 100%;
+  overflow: hidden;
+  padding: 5px;
+}
+body.ct-editing .ck-content .ct-element-with-hover-state.hover {
+  position: relative;
+}
+body.ct-editing .ck-content .ct-element-with-hover-state.hover > .ct-hover-state-element-view {
+  color: white;
+  display: flex;
+  background-color: var(--ck-color-focus-border);
+}
+
+.ct-element-with-hover-state {
+  position: relative;
+}
+
+/*# sourceMappingURL=style.css.map */

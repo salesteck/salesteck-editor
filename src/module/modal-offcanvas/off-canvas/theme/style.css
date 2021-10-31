@@ -1,0 +1,32 @@
+.ck-content .offcanvas {
+  transition: margin-right 0.3s ease-in-out;
+}
+.ck-content .offcanvas:not(.offcanvas-bottom) {
+  margin-top: var(--ct-toolbar-height);
+}
+.ck-content .offcanvas.show {
+  visibility: visible;
+}
+.ck-content .offcanvas.show:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+.ck-content .offcanvas-header[data-ct-child-count="0"]:before {
+  content: " ";
+  white-space: pre-wrap;
+}
+.ck-content .offcanvas-header > br {
+  display: none;
+}
+
+body.ct-elements-active .ck-content .offcanvas:not(.offcanvas-start) {
+  margin-right: var(--ct-elements-sidebar-width);
+}
+
+/*# sourceMappingURL=style.css.map */

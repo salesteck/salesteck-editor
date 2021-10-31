@@ -1,0 +1,382 @@
+.ck.ck-editor__editable_inline {
+  border: 0 !important;
+}
+
+.root-marker-element.ck-content [data-block-type=content] > *:not(.ck-widget) {
+  --ct-text-gradient-color-hsl: hsla(var(--ct-text-color-hsl), .3);
+}
+
+[data-drag-model-name=content] {
+  --ct-widget-color-hsl: hsl(210, 88%, 64%) !important;
+}
+
+[data-block-type=content] {
+  --ck-color-focus-border-coordinates: 210, 88%, 64% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-focus-border);
+}
+[data-block-type=content] > .ck-widget__selection-handle {
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=content] > .ck-widget__selection-handle:hover:after {
+  content: "CONTENT";
+}
+[data-block-type=content] > .ck-widget__type-around:before {
+  content: "CONTENT";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=content]:not([data-ct-child-count="0"]) > .ck-widget__type-around:after {
+  content: "CONTENT";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=content] > .drop-target-element {
+  color: var(--ck-color-focus-border) !important;
+}
+
+.ck-content [data-block-type=content],
+.ck-content [contenteditable=true] {
+  box-shadow: unset !important;
+  outline-color: var(--ck-color-widget-blurred-border);
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: 0;
+}
+.ck-content [data-block-type=content] > .ck-widget > .ck-widget__type-around > .ck-widget__type-around__button,
+.ck-content [contenteditable=true] > .ck-widget > .ck-widget__type-around > .ck-widget__type-around__button {
+  display: block;
+}
+.ck-content [data-block-type=content] > *:not(.ck-widget),
+.ck-content [contenteditable=true] > *:not(.ck-widget) {
+  background-image: linear-gradient(135deg, var(--ct-text-gradient-color-hsl) 25%, transparent 25%, transparent 50%, var(--ct-text-gradient-color-hsl) 50%, var(--ct-text-gradient-color-hsl) 75%, transparent 75%, transparent) !important;
+  background-size: 1rem 1rem !important;
+}
+.ck-content [data-block-type=content]:not(.ck-editor__nested-editable_focused) > *:not(.ck-widget),
+.ck-content [contenteditable=true]:not(.ck-editor__nested-editable_focused) > *:not(.ck-widget) {
+  --ct-text-gradient-color-hsl: hsla(var(--ct-text-color-hsl), .3);
+}
+.ck-content [data-block-type=content].ck-editor__nested-editable_focused, .ck-content [data-block-type=content]:focus,
+.ck-content [contenteditable=true].ck-editor__nested-editable_focused,
+.ck-content [contenteditable=true]:focus {
+  outline: var(--ck-color-focus-border) double calc(var(--ck-widget-outline-thickness) * 1.5) !important;
+  outline-offset: 0;
+}
+.ck-content [data-block-type=content].ck-editor__nested-editable_focused > *:not(.ck-widget), .ck-content [data-block-type=content]:focus > *:not(.ck-widget),
+.ck-content [contenteditable=true].ck-editor__nested-editable_focused > *:not(.ck-widget),
+.ck-content [contenteditable=true]:focus > *:not(.ck-widget) {
+  --ct-text-gradient-color-hsl: hsla(var(--ct-text-color-hsl), .1);
+}
+.ck-content [data-block-type=content] > .ck-widget,
+.ck-content [contenteditable=true] > .ck-widget {
+  --ck-color-focus-border-coordinates: 35, 100%, 63% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-widget-hover-border);
+  --ck-color-widget-type-around-button-blurred-editable: var(--ck-color-widget-blurred-border);
+}
+
+.ck-widget {
+  outline-width: var(--ck-widget-outline-thickness);
+  outline-style: solid;
+  outline-offset: calc( var(--ck-widget-outline-thickness) *-0.5 );
+}
+.ck-widget > .ck-widget__selection-handle {
+  z-index: 1;
+  top: 0 !important;
+  left: 10px !important;
+  right: unset !important;
+  transform: translateX(-50%) translateY(-50%) !important;
+  width: auto;
+  height: auto;
+  padding: 0 !important;
+}
+.ck-widget > .ck-widget__selection-handle > svg {
+  transition: all 0.1s ease-in-out;
+  width: var(--ct-widget-size) !important;
+  height: var(--ct-widget-size) !important;
+  padding: 2px;
+}
+.ck-widget > .ck-widget__selection-handle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.ck-widget > .ck-widget__selection-handle:after {
+  transition: width 2s;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  display: inline-block;
+  color: white;
+  max-height: 20px;
+  background-color: inherit;
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  visibility: hidden;
+  width: 0;
+  content: "";
+}
+.ck-widget > .ck-widget__selection-handle:hover:after {
+  width: auto;
+}
+.ck-widget > .ck-widget__type-around:before, .ck-widget > .ck-widget__type-around:after {
+  background-color: var(--ck-color-focus-border);
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  max-height: 20px;
+  color: white;
+  padding: 0 6px;
+}
+.ck-widget > .ck-widget__type-around:before {
+  top: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.ck-widget > .ck-widget__type-around:after {
+  bottom: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.ck-widget.ck-widget_selected {
+  overflow: visible;
+}
+.ck-widget.ck-widget_selected > .ck-widget__type-around:before, .ck-widget.ck-widget_selected > .ck-widget__type-around:after {
+  display: inline-block;
+}
+
+.ck-widget:not(.ck-widget_selected)[data-ct-child-count="0"] {
+  outline-color: var(--ck-color-widget-hover-border) !important;
+}
+.ck-widget:not(.ck-widget_selected) > .ck-widget__selection-handle:hover {
+  animation: ck-widget-type-around-button-sonar 1s ease infinite;
+}
+.ck-widget:not(.ck-widget_selected) > .ck-widget__selection-handle:hover:after {
+  padding: 0 5px;
+  visibility: visible;
+  width: auto;
+  white-space: nowrap;
+}
+
+[data-drag-model-name=section] {
+  --ct-widget-color-hsl: hsl(157, 58%, 66%) !important;
+}
+
+[data-block-type=section] {
+  --ck-color-focus-border-coordinates: 157, 58%, 66% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-focus-border);
+}
+[data-block-type=section] > .ck-widget__selection-handle {
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=section] > .ck-widget__selection-handle:hover:after {
+  content: "SECTION";
+}
+[data-block-type=section] > .ck-widget__type-around:before {
+  content: "SECTION";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=section]:not([data-ct-child-count="0"]) > .ck-widget__type-around:after {
+  content: "SECTION";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=section] > .drop-target-element {
+  color: var(--ck-color-focus-border) !important;
+}
+
+[data-drag-model-name=container] {
+  --ct-widget-color-hsl: hsl(4, 85%, 31%) !important;
+}
+
+[data-block-type=container] {
+  --ck-color-focus-border-coordinates: 4, 85%, 31% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-focus-border);
+}
+[data-block-type=container] > .ck-widget__selection-handle {
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=container] > .ck-widget__selection-handle:hover:after {
+  content: "CONTAINER";
+}
+[data-block-type=container] > .ck-widget__type-around:before {
+  content: "CONTAINER";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=container]:not([data-ct-child-count="0"]) > .ck-widget__type-around:after {
+  content: "CONTAINER";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=container] > .drop-target-element {
+  color: var(--ck-color-focus-border) !important;
+}
+
+[data-drag-model-name=row] {
+  --ct-widget-color-hsl: hsl(229, 35%, 44%) !important;
+}
+
+[data-block-type=row] {
+  --ck-color-focus-border-coordinates: 229, 35%, 44% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-focus-border);
+}
+[data-block-type=row] > .ck-widget__selection-handle {
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=row] > .ck-widget__selection-handle:hover:after {
+  content: "ROW";
+}
+[data-block-type=row] > .ck-widget__type-around:before {
+  content: "ROW";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=row]:not([data-ct-child-count="0"]) > .ck-widget__type-around:after {
+  content: "ROW";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=row] > .drop-target-element {
+  color: var(--ck-color-focus-border) !important;
+}
+
+[data-drag-model-name=column] {
+  --ct-widget-color-hsl: hsl(0, 100%, 70%) !important;
+}
+
+[data-block-type=column] {
+  --ck-color-focus-border-coordinates: 0, 100%, 70% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-focus-border);
+}
+[data-block-type=column] > .ck-widget__selection-handle {
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=column] > .ck-widget__selection-handle:hover:after {
+  content: "COLUMN";
+}
+[data-block-type=column] > .ck-widget__type-around:before {
+  content: "COLUMN";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=column]:not([data-ct-child-count="0"]) > .ck-widget__type-around:after {
+  content: "COLUMN";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=column] > .drop-target-element {
+  color: var(--ck-color-focus-border) !important;
+}
+
+[data-drag-model-name=block] {
+  --ct-widget-color-hsl: hsl(284, 100%, 72%) !important;
+}
+
+[data-block-type=block] {
+  --ck-color-focus-border-coordinates: 284, 100%, 72% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-focus-border);
+}
+[data-block-type=block] > .ck-widget__selection-handle {
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=block] > .ck-widget__selection-handle:hover:after {
+  content: "BLOCK";
+}
+[data-block-type=block] > .ck-widget__type-around:before {
+  content: "BLOCK";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=block]:not([data-ct-child-count="0"]) > .ck-widget__type-around:after {
+  content: "BLOCK";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=block] > .drop-target-element {
+  color: var(--ck-color-focus-border) !important;
+}
+
+.ck-content [data-path-length] > .ck-widget__selection-handle {
+  left: calc( ( var(--ct-tree-index) * var(--ct-tree-spacing) ) ) !important;
+}
+.ck-content [data-block-type=element] > .ck-widget__selection-handle,
+.ck-content [data-block-type=block-widget] > .ck-widget__selection-handle {
+  left: 50% !important;
+}
+.ck-content [data-path-length="1"] {
+  --ct-tree-index: 1;
+}
+.ck-content [data-path-length="2"] {
+  --ct-tree-index: 2;
+}
+.ck-content [data-path-length="3"] {
+  --ct-tree-index: 3;
+}
+.ck-content [data-path-length="4"] {
+  --ct-tree-index: 4;
+}
+.ck-content [data-path-length="5"] {
+  --ct-tree-index: 5;
+}
+.ck-content [data-path-length="6"] {
+  --ct-tree-index: 6;
+}
+.ck-content [data-path-length="7"] {
+  --ct-tree-index: 7;
+}
+.ck-content [data-path-length="8"] {
+  --ct-tree-index: 8;
+}
+.ck-content [data-path-length="9"] {
+  --ct-tree-index: 9;
+}
+.ck-content [data-path-length="10"] {
+  --ct-tree-index: 10;
+}
+.ck-content .ck-widget-block.ck-widget_selected {
+  outline-style: solid !important;
+}
+.ck-content .ck-widget.drop-element-selected:not([data-block-type=element]),
+.ck-content .ck-widget.ck-widget_selected:not([data-block-type=element]) {
+  outline: var(--ck-color-focus-border) double calc(var(--ck-widget-outline-thickness) * 1.5) !important;
+  outline-offset: -1px;
+}
+.ck-content .ck-widget.drop-element-selected:not([data-block-type=element]) > .ck-widget__selection-handle > svg,
+.ck-content .ck-widget.ck-widget_selected:not([data-block-type=element]) > .ck-widget__selection-handle > svg {
+  width: calc( var(--ck-widget-handler-icon-size) *2 ) !important;
+  height: calc( var(--ck-widget-handler-icon-size) *2 ) !important;
+}
+.ck-content [data-path-length][data-block-type=element] > .ck-widget__selection-handle {
+  margin-left: unset;
+}
+
+[data-block-type=block] > .ck-widget__type-around > .ck-widget__type-around__button {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

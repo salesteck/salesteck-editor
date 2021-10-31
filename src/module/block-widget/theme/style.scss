@@ -1,0 +1,21 @@
+@import "../../../theme/variable";
+@import "../../../theme/mixin";
+[data-block-type=block-widget]{
+
+    &.ck-widget_with-selection-handle{
+        & > .ck-widget__selection-handle{
+            transform: translateY(-50%) translateX(50%)  !important;
+            top: 50% !important;
+            left: unset !important;
+            right: 0 !important;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    & > .ck-widget__type-around{
+        --ck-color-widget-type-around-button-hover : var(--ck-color-widget-hover-border);
+        --ck-color-widget-type-around-button-active : var(--ck-color-focus-border);
+    }
+}
+@include _widgetColor('block-widget', $block-widget-color-hsl);

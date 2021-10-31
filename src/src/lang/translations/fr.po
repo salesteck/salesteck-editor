@@ -1,0 +1,7 @@
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: \n"
+
+msgid "text"
+msgstr "Simple text"

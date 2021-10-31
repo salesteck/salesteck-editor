@@ -1,0 +1,108 @@
+#ct-side-bar-elements .group-element {
+  overflow: hidden;
+}
+#ct-side-bar-elements .ct-element-btn-draggable {
+  cursor: all-scroll !important;
+}
+#ct-side-bar-elements .ct-element-btn-not-draggable {
+  cursor: default !important;
+}
+
+.root-marker-element[data-dragging-model-name] .ck-widget__selection-handle {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.root-marker-element [data-block-type=element] ~ [data-block-type=element] {
+  margin-left: 3px;
+}
+.root-marker-element[data-dragging-model-name=block] [data-block-type=section],
+.root-marker-element[data-dragging-model-name=block] [data-block-type=container],
+.root-marker-element[data-dragging-model-name=block] [data-block-type=row],
+.root-marker-element[data-dragging-model-name=block] [data-block-type=column],
+.root-marker-element[data-dragging-model-name=block] [data-block-type=block],
+.root-marker-element[data-dragging-model-name=block] [data-block-type=block-widget] {
+  outline-color: var(--ck-color-focus-border) !important;
+}
+.root-marker-element[data-dragging-model-name=block] [data-block-type=section] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=block] [data-block-type=container] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=block] [data-block-type=row] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=block] [data-block-type=column] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=block] [data-block-type=block] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=block] [data-block-type=block-widget] > .ck-widget__selection-handle {
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.root-marker-element[data-dragging-model-name=content] [data-block-type=column],
+.root-marker-element[data-dragging-model-name=content] [data-block-type=block] {
+  outline-color: var(--ck-color-focus-border) !important;
+}
+.root-marker-element[data-dragging-model-name=content] [data-block-type=column] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=content] [data-block-type=block] > .ck-widget__selection-handle {
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.root-marker-element[data-dragging-model-name=column] [data-block-type=row],
+.root-marker-element[data-dragging-model-name=column] [data-block-type=column],
+.root-marker-element[data-dragging-model-name=column] [data-block-type=block] {
+  outline-color: var(--ck-color-focus-border) !important;
+}
+.root-marker-element[data-dragging-model-name=column] [data-block-type=row] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=column] [data-block-type=column] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=column] [data-block-type=block] > .ck-widget__selection-handle {
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.root-marker-element[data-dragging-model-name=row] [data-block-type=container],
+.root-marker-element[data-dragging-model-name=row] [data-block-type=row],
+.root-marker-element[data-dragging-model-name=row] [data-block-type=column],
+.root-marker-element[data-dragging-model-name=row] [data-block-type=block] {
+  outline-color: var(--ck-color-focus-border) !important;
+}
+.root-marker-element[data-dragging-model-name=row] [data-block-type=container] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=row] [data-block-type=row] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=row] [data-block-type=column] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=row] [data-block-type=block] > .ck-widget__selection-handle {
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.root-marker-element[data-dragging-model-name=container] [data-block-type=section],
+.root-marker-element[data-dragging-model-name=container] [data-block-type=container],
+.root-marker-element[data-dragging-model-name=container] [data-block-type=block] {
+  outline-color: var(--ck-color-focus-border) !important;
+}
+.root-marker-element[data-dragging-model-name=container] [data-block-type=section] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=container] [data-block-type=container] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=container] [data-block-type=block] > .ck-widget__selection-handle {
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.root-marker-element[data-dragging-model-name=section] [data-block-type=section],
+.root-marker-element[data-dragging-model-name=section] [data-block-type=block] {
+  outline-color: var(--ck-color-focus-border) !important;
+}
+.root-marker-element[data-dragging-model-name=section] [data-block-type=section] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=section] [data-block-type=block] > .ck-widget__selection-handle {
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.root-marker-element[data-dragging-model-name=shape-divider] [data-block-type=section],
+.root-marker-element[data-dragging-model-name=shape-divider] [data-block-type=block],
+.root-marker-element[data-dragging-model-name=shape-divider] [data-block-type=shape-divider] {
+  outline-color: var(--ck-color-focus-border) !important;
+}
+.root-marker-element[data-dragging-model-name=shape-divider] [data-block-type=section] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=shape-divider] [data-block-type=block] > .ck-widget__selection-handle,
+.root-marker-element[data-dragging-model-name=shape-divider] [data-block-type=shape-divider] > .ck-widget__selection-handle {
+  display: block;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/*# sourceMappingURL=drad-and-drop.css.map */

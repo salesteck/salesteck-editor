@@ -1,0 +1,75 @@
+
+@mixin _textElementHighlight(){
+    --ct-text-gradient-color-hsl : hsla(var(--ct-text-color-hsl), .3);
+}
+@mixin _textElementActiveHighlight(){
+    --ct-text-gradient-color-hsl : hsla(var(--ct-text-color-hsl), .1);
+}
+.ck.ck-editor__editable_inline {
+
+    border: 0 !important;
+}
+.root-marker-element.ck-content{
+
+    [data-block-type=content]{
+        & > *:not(.ck-widget){
+            @include _textElementHighlight();
+        }
+    }
+
+}
+@include _widgetColor('content', $content-color-hsl);
+.ck-content{
+
+    [data-block-type=content],
+    [contenteditable=true]{
+        &> .ck-widget{
+            & > .ck-widget__type-around{
+                & > .ck-widget__type-around__button {
+                    display: block;
+                }
+            }
+        }
+        & > *:not(.ck-widget){
+
+            background-image: linear-gradient(
+                    135deg
+                , var(--ct-text-gradient-color-hsl) 25%, transparent 25%, transparent 50%, var(--ct-text-gradient-color-hsl) 50%, var(--ct-text-gradient-color-hsl) 75%, transparent 75%, transparent ) !important;
+            background-size: 1rem 1rem !important;
+        }
+
+        &:not(.ck-editor__nested-editable_focused){
+            & > *:not(.ck-widget){
+                @include _textElementHighlight();
+            }
+        }
+        box-shadow: unset !important;
+        outline-color: var(--ck-color-widget-blurred-border);
+        outline-width: 1px;
+        outline-style: solid;
+        outline-offset: 0;
+
+        &.ck-editor__nested-editable_focused,
+        &:focus{
+            @include _elementActive();
+            outline-offset: 0;
+
+            & > *:not(.ck-widget){
+                @include _textElementActiveHighlight();
+            }
+        }
+
+
+        & >.ck-widget{
+
+            --ck-color-focus-border-coordinates: #{$block-widget-color-hsl} !important;
+            --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+            --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+            --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+            --ck-color-widget-type-around-button-active : var(--ck-color-focus-border);
+            --ck-color-widget-type-around-button-hover : var(--ck-color-widget-hover-border);
+            --ck-color-widget-type-around-button-blurred-editable : var(--ck-color-widget-blurred-border);
+        }
+    }
+
+}

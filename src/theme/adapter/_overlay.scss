@@ -1,0 +1,9 @@
+.ck-editor__nested-editable_focused {
+    &.overlay-bg:before{
+        content: unset;
+    }
+}
+
+.overlay-bg:before ~ *{
+    position: relative;
+}

@@ -1,0 +1,60 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "sourceType": "module",
+    "source": {
+        "include": [
+            "./src",
+            "./JSDOC.md"
+        ],
+        "includePattern": ".+\\.js$",
+        "excludePattern": "(docs)"
+    },
+    "plugins": ["plugins/markdown", "plugins/summarize"],
+    "templates": {
+        "search": {
+            "apiKey": "your-api-key",
+            "indexName": "Your index name. Defaults to braintree.",
+            "hitsPerPage": "10"
+        },
+        "cleverLinks": true,
+        "disableSort": true,
+        "applicationName": "Demo",
+        "disqus": "",
+        "collapse": false,
+        "googleAnalytics": "",
+        "openGraph": {
+            "title": "",
+            "type": "website",
+            "image": "",
+            "site_name": "",
+            "url": ""
+        },
+        "meta": {
+            "title": "",
+            "description": "",
+            "keyword": ""
+        },
+        "linenums": true
+    },
+    "opts": {
+        "theme_opts" : {
+            "theme" :  "light"
+        },
+//        "template": "node_modules/clean-jsdoc-theme",
+//        "template": "node_modules/ub-jsdoc",
+//        "template": "node_modules/braintree-jsdoc-template",
+//        "template": "node_modules/minami",
+        "template": "node_modules/docdash",
+        "encoding": "utf8",
+        "destination": "docs",
+        "recurse": true,
+        "private": true
+    },
+    "recurseDepth": 10,
+    "script": {
+        "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
+    }
+}

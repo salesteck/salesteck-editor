@@ -1,0 +1,55 @@
+@mixin _element(){
+    outline-width: var(--ck-widget-outline-thickness);
+    outline-style: solid;
+    outline-offset: calc( var(--ck-widget-outline-thickness) *-0.5 );
+}
+
+@mixin _elementActive(){
+    outline: var(--ck-color-focus-border) double calc(var(--ck-widget-outline-thickness) * 1.5) !important;
+}
+
+@mixin _widgetColor($text, $color, $withText : true){
+    [data-drag-model-name=#{$text}]{
+        --ct-widget-color-hsl: hsl(#{$color}) !important;
+    }
+    [data-block-type=#{$text}] {
+
+        --ck-color-focus-border-coordinates: #{$color} !important;
+        --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+        --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+        --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+        --ck-color-widget-type-around-button-active : var(--ck-color-focus-border);
+        --ck-color-widget-type-around-button-hover : var(--ck-color-focus-border);
+        &> .ck-widget__selection-handle{
+            background: var(--ck-color-focus-border) !important;
+            @if($withText==true){
+                &:hover:after{
+                    content: '#{to-upper-case($text)}';
+                }
+                //&:after{
+                //    content: '#{to-upper-case($text)}';
+                //}
+            }
+        }
+        &> .ck-widget__type-around{
+            &:before{
+                @if($withText==true){
+                    content: '#{to-upper-case($text)}';
+                }
+                background: var(--ck-color-focus-border) !important;
+            }
+        }
+        &:not([data-ct-child-count='0'])> .ck-widget__type-around{
+            &:after{
+                @if($withText==true) {
+                    content: '#{to-upper-case($text)}';
+                }
+                background: var(--ck-color-focus-border) !important;
+            }
+        }
+        & > .drop-target-element{
+            color: var(--ck-color-focus-border) !important;
+        }
+    }
+}
+

@@ -1,0 +1,59 @@
+.ck {
+    &.ck-offcanvas-sidebar {
+        top: var(--ct-toolbar-height);
+
+        .dropdown-toggle {
+            position: relative;
+
+            &:after {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.ct-editing {
+
+    .ct-side-bar {
+        & > .modal-backdrop.show {
+            z-index: 1999;
+        }
+    }
+}
+:root{
+    --ct-side-bar-font-size : 14px;
+}
+.ct-side-bar {
+
+    .offcanvas-header{
+        font-size: var(--ct-side-bar-font-size);
+    }
+    .accordion-header {
+        &>.accordion-button{
+            font-size: var(--ct-side-bar-font-size);
+        }
+    }
+    .ck-input-text{
+        font-size: var(--ct-side-bar-font-size);
+    }
+    .dropdown-menu {
+        transition: box-shadow .25s ease-in-out !important;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+
+        &:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .19), 0 5px 5px rgba(0, 0, 0, .23) !important;
+        }
+    }
+    .dropdown-label ,
+    .col-form-label{
+        font-size: var(--ct-side-bar-font-size);
+    }
+    .dropdown-content{
+        &>.btn{
+            font-size: var(--ct-side-bar-font-size);
+        }
+    }
+}

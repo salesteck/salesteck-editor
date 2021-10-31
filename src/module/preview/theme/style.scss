@@ -1,0 +1,69 @@
+.ck-editor-lightbox{
+    z-index: 10001;
+    position: fixed;
+    .mfp-iframe-holder{
+        .mfp-content{
+
+            max-width: unset;
+            width: 100% ;
+            height: 100% ;
+            .mfp-iframe-scaler{
+
+                padding-top: unset;
+            }
+
+        }
+    }
+}
+.ck-editor-iframe {
+    z-index: 10001;
+    padding-top: unset;
+
+    .mfp-close, .mfp-close:active{
+        top: -40px;
+        right: 0;
+    }
+    .ck-preview-iframe {
+        margin: auto;
+        right: 0;
+        left: 0;
+        background-color: white;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: var(--bs-theme);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: var(--bs-theme);
+        }
+
+        &.phone {
+            max-width: 574px;
+        }
+
+        &.tablet {
+            max-width: 767px;
+        }
+
+        &.laptop {
+            max-width: 991px;
+        }
+
+        &.desktop {
+            max-width: 1199px;
+        }
+    }
+}

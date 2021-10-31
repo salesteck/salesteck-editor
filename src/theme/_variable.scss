@@ -1,0 +1,28 @@
+$ct-primary-color-hsl : (163, 100%, 33%); $primary-color-hex : #00A676;
+$hsl1 : (157, 58%, 66%);  $hex1 :#75DAB4;
+$hsl4 : (4, 85%, 31%);  $hex4 :#92140C;
+$hsl9 : (229, 35%, 44%);  $hex9 :#485696;
+$hsl3 : (0, 100%, 70%);  $hex3 :#FF6666;
+$hsl6 : (284, 100%, 72%);  $hex6 :#D972FF;
+
+$hsl2 : (210, 88%, 64%);  $hex2 :#52A3F4;
+
+$hsl5 : (35, 100%, 63%);  $hex5 :#FFB140;
+$hsl8 : (234, 74%, 66%);  $hex8 :#6874E8;
+$hsl10 : (216, 100%, 88%);  $hex2 :#C2DAFF;
+
+$hsl7 : (229, 12%, 17%);  $hex7 :#272932;
+
+$section-color-hsl: $hsl1;
+
+$container-color-hsl: $hsl4;
+$row-color-hsl: $hsl9;
+$column-color-hsl: $hsl3;
+$block-color-hsl: $hsl6;
+
+$content-color-hsl: $hsl2;
+
+$block-widget-color-hsl :$hsl5;
+$inline-widget-color-hsl :$hsl8;
+$text-color-hsl: $hsl10;
+$shape-divider-hsl : $hsl10;

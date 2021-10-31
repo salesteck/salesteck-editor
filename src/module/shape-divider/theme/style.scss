@@ -1,0 +1,24 @@
+@import "../../../theme/variable";
+@import "../../../theme/mixin";
+
+@include _widgetColor('shape-divider', $shape-divider-hsl);
+[data-block-type=shape-divider]{
+    background-repeat: repeat-x !important;
+
+    background:
+            linear-gradient(135deg, rgba(0,0,0, 0.35) 25%, transparent 25%) -20px center,
+            linear-gradient(225deg, rgba(0,0,0, 0.35) 25%, transparent 25%) -20px center,
+            linear-gradient(315deg, rgba(0,0,0, 0.35) 25%, transparent 25%) 0 center,
+            linear-gradient(45deg, rgba(0,0,0, 0.35) 25%, transparent 25%) 0 center !important;
+    background-size: 40px !important;
+
+    &.ck-widget_with-selection-handle{
+        & > .ck-widget__selection-handle{
+            transform:  translateX(-50%) translateY(-50%) !important;
+            top: 0 !important;
+            left: 50% !important;
+            right: unset !important;
+        }
+    }
+
+}

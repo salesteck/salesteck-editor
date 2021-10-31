@@ -1,0 +1,43 @@
+[data-drag-model-name=shape-divider] {
+  --ct-widget-color-hsl: hsl(216, 100%, 88%) !important;
+}
+
+[data-block-type=shape-divider] {
+  --ck-color-focus-border-coordinates: 216, 100%, 88% !important;
+  --ck-color-focus-border: hsl(var(--ck-color-focus-border-coordinates)) !important;
+  --ck-color-widget-hover-border: hsla(var(--ck-color-focus-border-coordinates) ,.5);
+  --ck-color-widget-blurred-border: hsla(var(--ck-color-focus-border-coordinates) ,.25);
+  --ck-color-widget-type-around-button-active: var(--ck-color-focus-border);
+  --ck-color-widget-type-around-button-hover: var(--ck-color-focus-border);
+}
+[data-block-type=shape-divider] > .ck-widget__selection-handle {
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=shape-divider] > .ck-widget__selection-handle:hover:after {
+  content: "SHAPE-DIVIDER";
+}
+[data-block-type=shape-divider] > .ck-widget__type-around:before {
+  content: "SHAPE-DIVIDER";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=shape-divider]:not([data-ct-child-count="0"]) > .ck-widget__type-around:after {
+  content: "SHAPE-DIVIDER";
+  background: var(--ck-color-focus-border) !important;
+}
+[data-block-type=shape-divider] > .drop-target-element {
+  color: var(--ck-color-focus-border) !important;
+}
+
+[data-block-type=shape-divider] {
+  background-repeat: repeat-x !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.35) 25%, transparent 25%) -20px center, linear-gradient(225deg, rgba(0, 0, 0, 0.35) 25%, transparent 25%) -20px center, linear-gradient(315deg, rgba(0, 0, 0, 0.35) 25%, transparent 25%) 0 center, linear-gradient(45deg, rgba(0, 0, 0, 0.35) 25%, transparent 25%) 0 center !important;
+  background-size: 40px !important;
+}
+[data-block-type=shape-divider].ck-widget_with-selection-handle > .ck-widget__selection-handle {
+  transform: translateX(-50%) translateY(-50%) !important;
+  top: 0 !important;
+  left: 50% !important;
+  right: unset !important;
+}
+
+/*# sourceMappingURL=style.css.map */
