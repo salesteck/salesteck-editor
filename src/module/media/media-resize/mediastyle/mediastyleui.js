@@ -24,7 +24,6 @@ import { normalizeMediaStyles } from './utils';
 /**
  * The image style UI plugin.
  *
- * @extends @ckEditor5/core/plugin~Plugin
  */
 export default class MediaStyleUI extends Plugin {
 	/**

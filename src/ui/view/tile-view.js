@@ -32,9 +32,10 @@ export default class TileView extends View {
             attributes: {
                 class: [
                     'ck',
-                    'ck-color-grid__tile',
                     'ck-grid__tile',
-                    'ck-color-table__color-tile_bordered'
+                    'ck-table__tile_bordered',
+                    // 'ck-color-grid__tile',
+                    // 'ck-color-table__color-tile_bordered'
                 ]
             },
 

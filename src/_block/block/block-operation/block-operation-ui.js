@@ -77,7 +77,6 @@ function _getFirstElement(element){
  * - horizontal and vertical alignment: the `'tableCellHorizontalAlignment'` and `'tableCellVerticalAlignment'` commands
  * - width and height: the `'tableCellWidth'` and `'tableCellHeight'` commands
  *
- * @extends @ckEditor5/core/plugin~Plugin
  */
 
 export default class BlockOperationUi extends Plugin {

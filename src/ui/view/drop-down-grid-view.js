@@ -9,6 +9,7 @@
 
 import { View, FocusCycler } from 'ckeditor5/src/ui';
 import { FocusTracker, KeystrokeHandler } from 'ckeditor5/src/utils';
+import "./theme/dropdown-gridview.css"
 
 /**
  * A grid of {@link @ckEditor5/ui/colorgrid/colortile~ColorTileView color tiles}.
@@ -87,7 +88,6 @@ export default class DropDownGridView extends View {
             attributes: {
                 class: [
                     'ck',
-                    'ck-color-grid',
                     'ck-grid'
                 ],
                 style: viewStyleAttribute

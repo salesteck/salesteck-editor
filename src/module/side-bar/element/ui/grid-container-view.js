@@ -319,7 +319,7 @@ function _createDragButton(element, editor, locale){
         element.template.forEach( templateItem=>{
             if(_isStrNotEmpty(templateItem.url) && _isStrNotEmpty(templateItem.title)){
                 // listItems += `<li class="list-group-item"><a href="javascript:void(0);" data-url="${componentRemoteUrl}${templateItem.url}" class="template-lightbox stretched-link tt-uppercase td-none">${templateItem.title}</a></li>`;
-                listItems += `<li class="list-group-item"><a href="javascript:void(0);" data-url="${templateItem.url}" class="template-lightbox stretched-link tt-uppercase td-none">${templateItem.title}</a></li>`;
+                listItems += `<li class="list-group-item"><a href="javascript:void(0);" data-url="${templateItem.url}" class="template-lightbox stretched-link tt-uppercase td-none text-c-dark">${templateItem.title}</a></li>`;
             }
         } );
         dropdownButton.delegate('dragstart').to(buttonGroup);
